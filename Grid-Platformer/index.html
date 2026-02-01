@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="assets/favicon.ico">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRID PLATFORMER</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
+
+    <!-- Fix relative paths for GitHub Pages subfolder -->
+    <base href="/GRID-PLATFORMER/">
+
     <style>
-        * {
+        /* Make Phaser canvas fullscreen */
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
             background: #000;
             overflow: hidden;
+            height: 100%;
+            width: 100%;
             font-family: Arial, sans-serif;
-            height: 100vh;
-            width: 100vw;
         }
-        canvas {
-            display: block;
-            margin: 0 auto;
-            touch-action: none;
+        #game-container {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <!-- Phaser Canvas will be created here automatically -->
-    
-    <!-- Phaser Library via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
-    
+    <!-- Phaser will inject the canvas here -->
+    <div id="game-container"></div>
+
+    <!-- Phaser 3 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+
     <!-- Your Game Scripts -->
     <script src="levelLoader.js"></script>
     <script src="game.js"></script>
+
+    <script>
+        // Optional: log if Phaser loaded correctly
+        console.log("Phaser and game scripts loaded!");
+    </script>
 </body>
 </html>
+
